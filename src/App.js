@@ -5,6 +5,8 @@ import MainHomePage from './Components/MainHomePage';
 import ErrorPage from './Components/ErrorPage';
 import HomePage from './Components/Main-Section/HomePage-Section/HomePage';
 import Blog from './Components/Main-Section/Blog-Section/Blog';
+import Statiestics from './Components/Main-Section/Statiestics-Section/Statiestics';
+import QuizPage from './Components/Main-Section/HomePage-Section/QuizPage';
 
 function App() {
   const route = createBrowserRouter([
@@ -14,14 +16,25 @@ function App() {
       children:[
         {
           path: '/',
+          loader: async()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
           element: <HomePage></HomePage>
         },
         {
-          path:'/statiestics'
+          path:'/statiestics',
+          element: <Statiestics></Statiestics>
         },
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '/quiz/:quizId',
+          loader: async ({params}) =>{
+            return fetch('')
+          },
+          element: <QuizPage></QuizPage>
         },
 
         {
