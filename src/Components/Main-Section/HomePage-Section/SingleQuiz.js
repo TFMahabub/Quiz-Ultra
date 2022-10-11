@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import Option from './Option';
 import { EyeIcon } from '@heroicons/react/24/solid'
+import Swal from 'sweetalert2'
 
 const SingleQuiz = ({singleQuestion}) => {
   const {correctAnswer, id, options, question} = singleQuestion;
 
   //For Eye Icon-
-  const [seen, setSeen] = useState(false);
+  const handleEyeIcon = () =>{
+      Swal.fire({
+        position: 'center',
+        // icon: 'success',
+        title: correctAnswer,
+        showConfirmButton: false,
+        timer: 2500
+      })
+  }
 
   return (
     <div className='bg-gray-100 p-8 rounded-md'>
@@ -15,7 +24,7 @@ const SingleQuiz = ({singleQuestion}) => {
         <div>
 
         </div>
-        <EyeIcon onClick={()=>setSeen(true)} className="h-5 w-5 cursor-pointer text-gray-700"/>
+        <EyeIcon onClick={handleEyeIcon} className="h-5 w-5 cursor-pointer text-gray-700"/>
       </div>
 
       <h2 className='text-[18px] font-[500]'>{question}</h2>
@@ -28,7 +37,6 @@ const SingleQuiz = ({singleQuestion}) => {
             key={idx}
             option = {option}
             correctAnswer = {correctAnswer}
-            seen = {seen}
           ></Option>)
         }
       </div>

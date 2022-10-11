@@ -1,21 +1,9 @@
-import React, { useState } from 'react';
-  import { ToastContainer, toast } from 'react-toastify';
+  import React from 'react';
   import 'react-toastify/dist/ReactToastify.css';
-  import CorrectAnswer from './CorrectAnswer';
-  import WrongAnswer from './WrongAnswer';
   import Swal from 'sweetalert2'
 
 const Option = ({option, correctAnswer, seen}) => {
 
-  if(seen){
-    Swal.fire({
-      position: 'center',
-      // icon: 'success',
-      title: correctAnswer,
-      showConfirmButton: false,
-      timer: 2500
-    })
-  }
   
   const handelerClickedOption = (clickedOption) =>{
     const checkAnswer = correctAnswer === clickedOption;
