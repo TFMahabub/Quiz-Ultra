@@ -8,7 +8,7 @@ const QuizPage = () => {
   // console.log(quizData);
   return (
     <div className='mt-10 grid grid-cols-1 gap-10 mx-4 md:mx-[10%] lg:mx-[20%]'>
-      <h2 className='text-2xl font-semibold text-gray-700'>---- {name} ----</h2>
+      <h2 className='text-2xl font-semibold text-[#179AB4]'>---- {name} ----</h2>
       {
         questions.map(singleQuestion => 
           <SingleQuiz

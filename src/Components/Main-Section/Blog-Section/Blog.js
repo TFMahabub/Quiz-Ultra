@@ -13,7 +13,7 @@ const Blog = () => {
     },
     {id: 3,
      title: 'What is UseRef?',
-     answer: "We use react-router to change the link path and add a component in the element in react. That's why we get easy/simple way to change the link path and add a page/design to this link page. For it works well we simply add the link path in any button or nav many or any kind of text we can simply use the <Link> tag and set to = {path} And then it works well."
+     answer: "Simply we use useState Hook to count how many time out application will be re-render, Our application will be infinite re-render. To avoid this we use useRef Hook. "
     }
   ]
   return (
