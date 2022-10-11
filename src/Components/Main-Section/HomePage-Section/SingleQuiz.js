@@ -3,17 +3,19 @@ import Option from './Option';
 import { EyeIcon } from '@heroicons/react/24/solid'
 
 const SingleQuiz = ({singleQuestion}) => {
-  const [seen, setSeen] = useState(false);
   const {correctAnswer, id, options, question} = singleQuestion;
-  // console.log(options);
+
+  //For Eye Icon-
+  const [seen, setSeen] = useState(false);
+
   return (
     <div className='bg-gray-100 p-8 rounded-md'>
 
-      <div onClick={()=>setSeen(!seen)} className='flex items-end justify-between mb-2'>
+      <div className='flex items-end justify-between mb-2'>
         <div>
 
         </div>
-        <EyeIcon className="h-5 w-5 cursor-pointer"/>
+        <EyeIcon onClick={()=>setSeen(true)} className="h-5 w-5 cursor-pointer text-gray-700"/>
       </div>
 
       <h2 className='text-[18px] font-[500]'>{question}</h2>

@@ -6,9 +6,21 @@ import React, { useState } from 'react';
   import Swal from 'sweetalert2'
 
 const Option = ({option, correctAnswer, seen}) => {
+
+  if(seen){
+    Swal.fire({
+      position: 'center',
+      // icon: 'success',
+      title: correctAnswer,
+      showConfirmButton: false,
+      timer: 2500
+    })
+  }
+  
   const handelerClickedOption = (clickedOption) =>{
     const checkAnswer = correctAnswer === clickedOption;
-    
+
+
     if(checkAnswer){
       Swal.fire({
       position: 'center',
@@ -29,7 +41,7 @@ const Option = ({option, correctAnswer, seen}) => {
     }
   }
   return (
-    <div onClick={() => handelerClickedOption(option)} className='border-2 border-[#179AB4] rounded-md p-3 hover:bg-[#d7f1f5] cursor-pointer'>
+    <div onClick={() => handelerClickedOption(option)} className={`border-2 border-[#179AB4] rounded-md p-3 hover:bg-[#d7f1f5] cursor-pointer `}>
       <h4>{option}</h4>
     </div>
   );
