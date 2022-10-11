@@ -13,7 +13,7 @@ const Blog = () => {
     },
     {id: 3,
      title: 'What is UseRef?',
-     answer: "Simply we use useState Hook to count how many time out application will be re-render, Our application will be infinite re-render. To avoid this we use useRef Hook. "
+     answer: "Simply we use useState Hook to count how many time our application will be re-render, if anytime our application be infinite re-render. Then, we use useRef to avoid this."
     }
   ]
   return (
