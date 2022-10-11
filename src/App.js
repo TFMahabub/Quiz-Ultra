@@ -45,6 +45,10 @@ function App() {
           element: <ErrorPage></ErrorPage>
         }
       ]
+    },
+    {
+      path: '*',
+      element: <ErrorPage></ErrorPage>
     }
   ])
   return (
